@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js" defer></script>
+
+    <style>
+
+        #wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .thumbnailimage{
+            height:100px;
+            width: 150px;
+            object-fit: fill;
+        }
+
+        #preLoader{
+            background: url(loadIcon.gif) no-repeat center center;
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            z-index: 100;
+        }
+
+        .imageContainer{
+            width: 200px;
+        }
+
+        #wrapper{
+            margin-left: 200px;
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="preLoader"></div>
+
+    <button id="button" onclick="refresh()">Click here to refresh</button>
+
+    <form action="">
+        <input type="radio" name="type" value="Relevant" onclick="changeType(this)"><label>Relevant</label>
+        <input type="radio" name="type" value="Latest" onclick="changeType(this)"><label>Latest</label>
+    </form>
+    
+    <div class="imageContainer" style="display: none ;">
+        <a class="imageLink" target="_blank"><img class="thumbnailimage"></a><br>
+        <a class="authorProfile" target="_blank"><b>Author:</b><i class="authorName"></i> </a><br>
+        <p class="description"></p>
+    </div>
+
+    <div id="wrapper">
+        
+    </div>
+
+    
+</body>
+</html>
